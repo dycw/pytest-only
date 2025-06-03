@@ -8,8 +8,10 @@ requires = ["hatchling"]
 # dependency groups
 [dependency-groups]
 dev = [
-  "dycw-utilities[test]",
   "pyright[nodejs]",
+  "pytest",
+  "pytest-cov>=6.1.1",
+  "pytest-xdist",
 ]
 
 # project
@@ -19,12 +21,12 @@ dependencies = []
 name = "dycw-pytest-only"
 readme = "README.md"
 requires-python = ">= 3.13"
-version = "0.1.1"
+version = "0.1.2"
 
 # bump-my-version
 [tool.bumpversion]
 allow_dirty = true
-current_version = "0.1.1"
+current_version = "0.1.2"
 
 [[tool.bumpversion.files]]
 filename = "src/pytest_only/__init__.py"
