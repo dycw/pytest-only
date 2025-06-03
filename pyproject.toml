@@ -20,7 +20,7 @@ authors = [{name = "Derek Wan", email = "d.wan@icloud.com"}]
 dependencies = []
 name = "dycw-pytest-only"
 readme = "README.md"
-requires-python = ">= 3.13"
+requires-python = ">= 3.12"
 version = "0.1.2"
 
 # bump-my-version
@@ -62,7 +62,7 @@ packages = ["src/pytest_only"]
 # nitpick
 [tool.nitpick]
 style = [
-  "https://raw.githubusercontent.com/dycw/nitpick/master/styles/3.13.toml",
+  "https://raw.githubusercontent.com/dycw/nitpick/master/styles/3.12.toml",
   "https://raw.githubusercontent.com/dycw/nitpick/master/styles/common.toml",
 ]
 
@@ -71,7 +71,7 @@ style = [
 deprecateTypingAliases = true
 enableReachabilityAnalysis = false
 ignore = ["**/_typeshed/**"]
-pythonVersion = "3.13"
+pythonVersion = "3.12"
 reportAny = false
 reportCallInDefaultInitializer = true
 reportImplicitOverride = true
@@ -115,7 +115,7 @@ xfail_strict = true
 # ruff
 [tool.ruff]
 src = ["src"]
-target-version = "py313"
+target-version = "py312"
 unsafe-fixes = true
 
 [tool.ruff.format]
