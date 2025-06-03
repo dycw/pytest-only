@@ -1,0 +1,188 @@
+#
+
+# build-system
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatchling"]
+
+# dependency groups
+[dependency-groups]
+dev = [
+  "dycw-utilities[test]",
+  "pyright[nodejs]",
+]
+
+# project
+[project]
+authors = [{name = "Derek Wan", email = "d.wan@icloud.com"}]
+dependencies = []
+name = "dycw-template"
+readme = "README.md"
+requires-python = ">= 3.13"
+version = "0.1.0"
+
+# bump-my-version
+[tool.bumpversion]
+allow_dirty = true
+current_version = "0.1.0"
+
+[[tool.bumpversion.files]]
+filename = "src/dycw_template/__init__.py"
+replace = "__version__ = \"{new_version}\""
+search = "__version__ = \"{current_version}\""
+
+# coverage
+[tool.coverage]
+
+[tool.coverage.html]
+directory = ".coverage/html"
+
+[tool.coverage.report]
+exclude_also = ["@overload", "if TYPE_CHECKING:"]
+fail_under = 100.0
+skip_covered = true
+skip_empty = true
+
+[tool.coverage.run]
+branch = true
+data_file = ".coverage/data"
+parallel = true
+
+# hatch
+[tool.hatch]
+
+[tool.hatch.build.targets.sdist]
+include = ["src"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/dycw_template"]
+
+# nitpick
+[tool.nitpick]
+style = [
+  "https://raw.githubusercontent.com/dycw/nitpick/master/styles/3.13.toml",
+  "https://raw.githubusercontent.com/dycw/nitpick/master/styles/common.toml",
+]
+
+# pyright
+[tool.pyright]
+deprecateTypingAliases = true
+enableReachabilityAnalysis = false
+ignore = ["**/_typeshed/**"]
+pythonVersion = "3.13"
+reportAny = false
+reportCallInDefaultInitializer = true
+reportImplicitOverride = true
+reportImplicitStringConcatenation = true
+reportImportCycles = true
+reportMissingSuperCall = true
+reportMissingTypeArgument = false
+reportMissingTypeStubs = false
+reportPrivateUsage = false
+reportPropertyTypeMismatch = true
+reportShadowedImports = true
+reportUninitializedInstanceVariable = true
+reportUnknownArgumentType = false
+reportUnknownMemberType = false
+reportUnknownParameterType = false
+reportUnknownVariableType = false
+reportUnnecessaryTypeIgnoreComment = true
+reportUnusedCallResult = true
+reportUnusedImport = false
+reportUnusedVariable = false
+typeCheckingMode = "strict"
+
+# pytest
+[tool.pytest]
+
+[tool.pytest.ini_options]
+addopts = [
+  "-ra",
+  "-vv",
+  "--color=auto",
+  "--cov=dycw_template",
+  "--cov-config=pyproject.toml",
+  "--cov-report=html",
+  "--strict-markers",
+]
+filterwarnings = ["error"]
+minversion = "8.0"
+testpaths = ["src/tests"]
+xfail_strict = true
+
+# ruff
+[tool.ruff]
+src = ["src"]
+target-version = "py313"
+unsafe-fixes = true
+
+[tool.ruff.format]
+preview = true
+
+[tool.ruff.lint]
+explicit-preview-rules = true
+fixable = ["ALL"]
+ignore = [
+  "ANN401",  # any-type
+  "ASYNC109",  # async-function-with-timeout
+  "C901",  # complex-structure
+  "CPY001",  # missing-copyright-notice
+  "D100",  # undocumented-public-module
+  "D101",  # undocumented-public-class
+  "D102",  # undocumented-public-method
+  "D103",  # undocumented-public-function
+  "D104",  # undocumented-public-package
+  "D105",  # undocumented-magic-method
+  "D106",  # undocumented-public-nested-class
+  "D107",  # undocumented-public-init
+  "D203",  # one-blank-line-before-class
+  "D213",  # multi-line-summary-second-line
+  "E501",  # line-too-long
+  "PD",  # pandas-vet
+  "PERF203",  # try-except-in-loop
+  "PLR0904",  # too-many-public-methods
+  "PLR0911",  # too-many-return-statements
+  "PLR0912",  # too-many-branches
+  "PLR0913",  # too-many-arguments
+  "PLR0915",  # too-many-statements
+  "PLR2004",  # magic-value-comparison
+  "PT013",  # pytest-incorrect-pytest-import
+  "S311",  # suspicious-non-cryptographic-random-usage
+  "S603",  # subprocess-without-shell-equals-true
+  "S607",  # start-process-with-partial-path
+  # preview
+  "S101",  # assert
+  # formatter
+  "W191",  # tab-indentation
+  "E111",  # indentation-with-invalid-multiple
+  "E114",  # indentation-with-invalid-multiple-comment
+  "E117",  # over-indented
+  "D206",  # indent-with-spaces
+  "D300",  # triple-single-quotes
+  "Q000",  # bad-quotes-inline-string
+  "Q001",  # bad-quotes-multiline-string
+  "Q002",  # bad-quotes-docstring
+  "Q003",  # avoidable-escaped-quote
+  "COM812",  # missing-trailing-comma
+  "COM819",  # prohibited-trailing-comma
+  "ISC001",  # single-line-implicit-string-concatenation
+  "ISC002",  # multi-line-implicit-string-concatenation
+]
+preview = true
+select = [
+  "ALL",
+  # preview
+  "RUF022",  # unsorted-dunder-all
+  "RUF029",  # unused-async
+]
+
+[tool.ruff.lint.extend-per-file-ignores]
+"src/tests/**/*.py" = [
+  "S101",  # assert-used
+]
+
+[tool.ruff.lint.flake8-tidy-imports]
+ban-relative-imports = "all"
+
+[tool.ruff.lint.isort]
+required-imports = ["from __future__ import annotations"]

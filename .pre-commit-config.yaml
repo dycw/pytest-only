@@ -1,0 +1,46 @@
+repos:
+  # fixers
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.11.11
+    hooks:
+      - id: ruff-check
+        args: [--fix]
+  - repo: https://github.com/dycw/pre-commit-hooks
+    rev: 0.11.0
+    hooks:
+      # - id: run-bump-my-version
+      - id: run-ruff-format
+  - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
+    rev: v2.14.0
+    hooks:
+      - id: pretty-format-toml
+        args: [--autofix, --trailing-commas]
+  - repo: https://github.com/astral-sh/uv-pre-commit
+    rev: 0.7.8
+    hooks:
+      - id: uv-sync # after version bump
+        args: [--all-packages, --upgrade]
+        stages: [pre-commit, pre-push]
+  # linters
+  - repo: https://github.com/andreoliwa/nitpick
+    rev: v0.35.0
+    hooks:
+      - id: nitpick-check
+  - repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: v0.10.0.1
+    hooks:
+      - id: shellcheck
+  # fixers/linters
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-executables-have-shebangs
+      - id: check-merge-conflict
+      - id: check-symlinks
+      - id: destroyed-symlinks
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+        args: [--fix=lf]
+      - id: no-commit-to-branch
+      - id: trailing-whitespace
