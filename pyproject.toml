@@ -16,18 +16,18 @@ dev = [
 [project]
 authors = [{name = "Derek Wan", email = "d.wan@icloud.com"}]
 dependencies = []
-name = "dycw-template"
+name = "dycw-pytest-only"
 readme = "README.md"
 requires-python = ">= 3.13"
-version = "0.1.0"
+version = "0.1.1"
 
 # bump-my-version
 [tool.bumpversion]
 allow_dirty = true
-current_version = "0.1.0"
+current_version = "0.1.1"
 
 [[tool.bumpversion.files]]
-filename = "src/dycw_template/__init__.py"
+filename = "src/pytest_only/__init__.py"
 replace = "__version__ = \"{new_version}\""
 search = "__version__ = \"{current_version}\""
 
@@ -55,7 +55,7 @@ parallel = true
 include = ["src"]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/dycw_template"]
+packages = ["src/pytest_only"]
 
 # nitpick
 [tool.nitpick]
@@ -100,7 +100,7 @@ addopts = [
   "-ra",
   "-vv",
   "--color=auto",
-  "--cov=dycw_template",
+  "--cov=pytest_only",
   "--cov-config=pyproject.toml",
   "--cov-report=html",
   "--strict-markers",

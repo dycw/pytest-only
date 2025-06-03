@@ -1,1 +1,1 @@
-# `dycw-template`
+# `pytest-only`
