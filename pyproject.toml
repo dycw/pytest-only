@@ -21,7 +21,7 @@ dependencies = [
 name = "dycw-pytest-only"
 readme = "README.md"
 requires-python = ">= 3.12"
-version = "0.1.3"
+version = "2.1.1"
 
 [project.entry-points.pytest11]
 only = "pytest_only.plugin"
@@ -29,7 +29,7 @@ only = "pytest_only.plugin"
 # bump-my-version
 [tool.bumpversion]
 allow_dirty = true
-current_version = "0.1.3"
+current_version = "2.1.1"
 
 [[tool.bumpversion.files]]
 filename = "src/pytest_only/__init__.py"

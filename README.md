@@ -4,7 +4,11 @@ This is a fork of [`theY4Kman/pytest-only`](https://github.com/theY4Kman/pytest-
 
 ## Installation
 
-`pip install dycw-pytest-only`
+Available at [PyPI](https://pypi.org/project/dycw-pytest-only/).
+
+```console
+pip install dycw-pytest-only
+```
 
 ## Versioning
 
