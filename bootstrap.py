@@ -28,7 +28,7 @@ def main() -> None:
     root = get_repo_root()
     _LOGGER.info(root)
 
-    template_dashed = "dycw-template"
+    template_dashed = "pytest-only"
     template_underscore = template_dashed.replace("-", "_")
 
     name = get_repo_name()
@@ -39,7 +39,7 @@ def main() -> None:
 
     pre_commit_replacements = [
         _Replacement(
-            from_="# - id: run-bump-my-version", to="- id: run-bump-my-version"
+            from_="- id: run-bump-my-version", to="- id: run-bump-my-version"
         )
     ]
     replacements = list(chain(template_replacements, pre_commit_replacements))
