@@ -73,7 +73,7 @@ style = [
 [tool.pyright]
 deprecateTypingAliases = true
 enableReachabilityAnalysis = false
-ignore = ["**/_typeshed/**"]
+ignore = ["**/_typeshed/**", 'pytest-only/**']
 pythonVersion = "3.12"
 reportAny = false
 reportCallInDefaultInitializer = true
