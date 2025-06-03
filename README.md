@@ -12,6 +12,6 @@ pip install dycw-pytest-only
 
 ## Versioning
 
-| Date       | This package version | Upstream version |
-| ---------- | -------------------- | ---------------- |
-| 2025-06-03 | 2.1.1                | 2.1.1            |
+| Date       | Minimum Python version | This package version | Upstream version |
+| ---------- | ---------------------- | -------------------- | ---------------- |
+| 2025-06-03 | 3.9                    | 2.1.1                | 2.1.1            |
