@@ -57,22 +57,24 @@ wheels = [
 name = "dycw-pytest-only"
 version = "0.1.2"
 source = { editable = "." }
+dependencies = [
+    { name = "pytest" },
+]
 
 [package.dev-dependencies]
 dev = [
     { name = "pyright", extra = ["nodejs"] },
-    { name = "pytest" },
     { name = "pytest-cov" },
     { name = "pytest-xdist" },
 ]
 
 [package.metadata]
+requires-dist = [{ name = "pytest", specifier = ">=8.0.0" }]
 
 [package.metadata.requires-dev]
 dev = [
     { name = "pyright", extras = ["nodejs"] },
-    { name = "pytest" },
-    { name = "pytest-cov", specifier = ">=6.1.1" },
+    { name = "pytest-cov" },
     { name = "pytest-xdist" },
 ]
 

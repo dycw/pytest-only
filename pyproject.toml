@@ -9,19 +9,23 @@ requires = ["hatchling"]
 [dependency-groups]
 dev = [
   "pyright[nodejs]",
-  "pytest",
-  "pytest-cov>=6.1.1",
+  "pytest-cov",
   "pytest-xdist",
 ]
 
 # project
 [project]
 authors = [{name = "Derek Wan", email = "d.wan@icloud.com"}]
-dependencies = []
+dependencies = [
+  "pytest >= 8.0.0",
+]
 name = "dycw-pytest-only"
 readme = "README.md"
 requires-python = ">= 3.12"
 version = "0.1.2"
+
+[project.entry-points.pytest11]
+only = "pytest_only.plugin"
 
 # bump-my-version
 [tool.bumpversion]
