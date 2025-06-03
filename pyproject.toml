@@ -20,7 +20,7 @@ dependencies = [
 ]
 name = "dycw-pytest-only"
 readme = "README.md"
-requires-python = ">= 3.12"
+requires-python = ">= 3.9"
 version = "2.1.1"
 
 [project.entry-points.pytest11]
@@ -65,7 +65,6 @@ packages = ["src/pytest_only"]
 # nitpick
 [tool.nitpick]
 style = [
-  "https://raw.githubusercontent.com/dycw/nitpick/master/styles/3.12.toml",
   "https://raw.githubusercontent.com/dycw/nitpick/master/styles/common.toml",
 ]
 
@@ -74,7 +73,7 @@ style = [
 deprecateTypingAliases = true
 enableReachabilityAnalysis = false
 ignore = ["**/_typeshed/**", "pytest-only/**"]
-pythonVersion = "3.12"
+pythonVersion = "3.9"
 reportAny = false
 reportCallInDefaultInitializer = true
 reportImplicitOverride = true
@@ -116,7 +115,7 @@ xfail_strict = true
 [tool.ruff]
 exclude = ["pytest-only"]
 src = ["src"]
-target-version = "py312"
+target-version = "py39"
 unsafe-fixes = true
 
 [tool.ruff.format]
