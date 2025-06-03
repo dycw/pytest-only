@@ -9,7 +9,6 @@ requires = ["hatchling"]
 [dependency-groups]
 dev = [
   "pyright[nodejs]",
-  "pytest-cov",
   "pytest-xdist",
 ]
 
@@ -106,9 +105,6 @@ addopts = [
   "-ra",
   "-vv",
   "--color=auto",
-  "--cov=pytest_only",
-  "--cov-config=pyproject.toml",
-  "--cov-report=html",
   "--strict-markers",
 ]
 filterwarnings = ["error"]
