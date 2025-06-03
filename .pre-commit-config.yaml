@@ -1,7 +1,7 @@
 repos:
   # fixers
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.11.11
+    rev: v0.11.12
     hooks:
       - id: ruff-check
         args: [--fix]
@@ -16,7 +16,7 @@ repos:
       - id: pretty-format-toml
         args: [--autofix, --trailing-commas]
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.7.8
+    rev: 0.7.9
     hooks:
       - id: uv-sync # after version bump
         args: [--all-packages, --upgrade]
