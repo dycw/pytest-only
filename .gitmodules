@@ -1,0 +1,3 @@
+[submodule "pytest-only"]
+	path = pytest-only
+	url = https://github.com/theY4Kman/pytest-only.git
